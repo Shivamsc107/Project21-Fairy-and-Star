@@ -2,7 +2,7 @@ var starImg,bgImg;
 var star, starBody;
 var fairy,fairyImg;
 //create variable for fairy sprite and fairyImg
-
+var sound
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -13,13 +13,14 @@ function preload()
 	starImg = loadImage("images/star.png");
 	bgImg = loadImage("images/starNight.png");
 	fairyImg=loadAnimation("images/fairyImage1.png","images/fairyImage2.png");
+	sound=loadSound("sound/JoyMusic.mp3")
 }
 
 function setup() {
 	createCanvas(800, 750);
 
 	//write code to play fairyVoice sound
-
+sound.play();
 	//create fairy sprite and add animation for fairy
 fairy=createSprite(200,520,50,50);
 fairy.addAnimation("flyingfairy",fairyImg)
